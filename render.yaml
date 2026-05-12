@@ -15,7 +15,6 @@ services:
   - type: web         # Use 'web' for the top-level type
     name: cave-diver-client
     env: static       # This tells Render it's a Static Site
-    region: oregon
     buildCommand: npm install && npm run build
     staticPublishPath: dist  # Note the change to 'staticPublishPath'
     envVars:
