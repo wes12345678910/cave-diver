@@ -3,7 +3,6 @@ services:
   - type: web
     name: cave-diver-server
     env: node
-    region: oregon
     buildCommand: npm install && npm run build
     startCommand: node --import tsx server/index.js
     envVars:
