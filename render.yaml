@@ -13,11 +13,12 @@ services:
         value: 10000
 
   # Frontend Client - Static Site
-  - type: static_site  # <--- Changed from 'static' to 'static_site'
+  - type: web         # Use 'web' for the top-level type
     name: cave-diver-client
+    env: static       # This tells Render it's a Static Site
     region: oregon
     buildCommand: npm install && npm run build
-    publishDir: dist    # <--- Changed from 'buildPublishDir' to 'publishDir'
+    staticPublishPath: dist  # Note the change to 'staticPublishPath'
     envVars:
       - key: VITE_SERVER_URL
         value: https://cave-diver-server.onrender.com
