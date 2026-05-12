@@ -13,13 +13,11 @@ services:
         value: 10000
 
   # Frontend Client - Static Site
-  - type: static
+  - type: static_site  # <--- Changed from 'static' to 'static_site'
     name: cave-diver-client
     region: oregon
     buildCommand: npm install && npm run build
-    buildPublishDir: dist
-    # NOTE: After first server deploy, update this URL to your server URL
-    # Server will be at: https://cave-diver-server-xxx.onrender.com
+    publishDir: dist    # <--- Changed from 'buildPublishDir' to 'publishDir'
     envVars:
       - key: VITE_SERVER_URL
         value: https://cave-diver-server.onrender.com
